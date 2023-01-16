@@ -1,0 +1,109 @@
+1) root directory is the directory that contains all files on the tree (hence the name root).
+to change the cwd to root, type the command "cd /". cd means change the directory, and / is the path of the root.
+There is no terminal output but you should be able to see that the path displayed in the command prompt is now just "/".
+
+2) touch foo.txt. No output but ls will show the file foo.txt in your current directory.
+
+3) mv foo.txt bar.txt. NO output but ls will show file bar.txt in current directory.
+
+4) whoami. The output is your username on your linux machine ("ubuntu" in my case).
+
+5)whereis ls. The output is the path of the binary: ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
+
+6) Shell environment variables are variables that consist of information about the OS system and the current shell session.
+the printenv command can be used to view shell environment variables.
+
+7) the current shell is an environment variable ($SHELL) so we can simply echo $SHELL.
+the output is a path: "bin/bash" which represents the language the shell is using, bash
+
+8) the hostnamectl command will give a lot of information about the system, including the kernel version, which is given on the second to last line.
+The complete output is: 
+   Static hostname: ubuntu2004
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 5ee791cabf1e44e5942a2367ae0cd3bd
+           Boot ID: e392303524ca479f94c5a9147c7bca59
+    Virtualization: oracle
+  Operating System: Ubuntu 20.04.5 LTS
+            Kernel: Linux 5.15.0-57-generic
+      Architecture: x86-64
+the kernel version is Linux 5.15.0-57-generic
+
+9) find /bin/ | grep ch
+Output: 
+/bin/podchecker
+/bin/which
+/bin/gtk-update-icon-cache
+/bin/chage
+/bin/inputattach
+/bin/check-language-support
+/bin/arch
+/bin/chfn
+/bin/linux-check-removal
+/bin/mcheck
+/bin/rendercheck
+/bin/chattr
+/bin/networkd-dispatcher
+/bin/dpkg-genchanges
+/bin/cheese
+/bin/gnome-characters
+/bin/chmod
+/bin/chsh
+/bin/gst-launch-1.0
+/bin/ischroot
+/bin/chrt
+/bin/hciattach
+/bin/pkcheck
+/bin/enchant-lsmod-2
+/bin/watchgnupg
+/bin/dpkg-architecture
+/bin/grub-script-check
+/bin/apt-cache
+/bin/locale-check
+/bin/chacl
+/bin/hp-check
+/bin/fc-cache
+/bin/fc-match
+/bin/pdfdetach
+/bin/echo
+/bin/lessecho
+/bin/dpkg-checkbuilddeps
+/bin/chvt
+/bin/btattach
+/bin/dbus-launch
+/bin/cautious-launcher
+/bin/catchsegv
+/bin/chardetect3
+/bin/setarch
+/bin/ubuntu-core-launcher
+/bin/xkbwatch
+/bin/choom
+/bin/patch
+/bin/chcon
+/bin/watch
+/bin/chardet3
+/bin/touch
+/bin/pathchk
+/bin/glib-compile-schemas
+/bin/im-launch
+/bin/systemd-machine-id-setup
+/bin/isdv4-serial-inputattach
+/bin/dpkg-parsechangelog
+/bin/chgrp
+/bin/sbattach
+/bin/apt-ftparchive
+/bin/enchant-2
+/bin/gtk-launch
+/bin/speech-dispatcher
+/bin/pdfattach
+/bin/chown
+/bin/dpkg-mergechangelogs
+- all of these files c
+
+10) ls -A /home/ | wc -l
+output: 1
+
+11) grep --include=\*.c -r "int c" .
+Output:
+./test.c:int c;
+note: test.c is a file i created that only contains "int c;" to test that the command was working
