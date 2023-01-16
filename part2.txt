@@ -49,9 +49,9 @@ chsh
 chvt
 - all of these files start in ch so this is good
 
-10) ls -A /home/ | wc -l
-ls -Al /home/ | grep -v ^l | wc -l
-output: 1
+10) find /home/ -maxdepth 1 -type f | wc -l
+output: 3
+(I made three files in the home directory to test if it was counting only files within the home directory)
 
 11) grep --include=\*.c -r "int c" .
 Output:
