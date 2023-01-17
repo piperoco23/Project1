@@ -10,6 +10,14 @@ int main(int argc, char *argv[]){
             if(fgets(str, 60, f) != NULL){
                 puts(fgets(str, 60, f));
             }
+            else{
+                exit(1);
+            }
+        }
+        else{
+            printf("wcat: cannot open file\n");
+            exit(1);
         }
     }
+    return 0;
 }
