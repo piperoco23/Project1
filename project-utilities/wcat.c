@@ -8,7 +8,7 @@ int main(int argc, char *argv[]){
         f = fopen(argv[a], "r");
         if(f != NULL){
             if(fgets(str, 60, f) != NULL){
-                puts(str);
+                printf("%s", str);
             }
             else{
                 return 1;
