@@ -11,6 +11,9 @@ int main(int argc, char *argv[]){
                 printf("%s", str);
             }
             else{
+                if(feof(f)){
+                return 0;
+                }
                 return 1;
             }
         }
