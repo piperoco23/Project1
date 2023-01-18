@@ -14,16 +14,29 @@ int main(int argc, char *argv[]){
     //location the string will be stored in 
     char * line = (char *) malloc(buffer);
 
-    printf("%d", argc);
     //if there are no arguments
-    if(argc == 0){
+    if(argc <= 1){
+        puts("wgrep: searchterm [file ...]");
         return 1;
+    }
+    //case where no file argument is given for stdin
+    else if(argc == 2){
+        while(1){
+            getline(&line, &buffer, stdin);
+            if(feof(stdin)){
+                    break;
+                }
+            if(strstr(line, search) != NULL){
+                printf("%s", line);
+            }
+        }
+        return 0;
     }
 
     for(a = 2; a<argc; a=a+1){
         f = fopen(argv[a], "r");
         if( f == NULL){
-            printf("wgrep: cannot open file\n");
+            puts("wgrep: cannot open file");
             return 1;
         }
         else{
