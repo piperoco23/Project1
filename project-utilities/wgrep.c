@@ -1,20 +1,22 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]){
     int a;
     FILE *f;
-    char c;
+    //char c;
     //string we want to search the file for
     char *search = argv[1];
 
     //size of the buffer for the input line
-    int buffer = 120;
+    size_t buffer = 120;
     //location the string will be stored in 
     char * line = (char *) malloc(buffer);
 
     printf("%d", argc);
     //if there are no arguments
-    if(argc = 0){
+    if(argc == 0){
         return 1;
     }
 
@@ -28,7 +30,7 @@ int main(int argc, char *argv[]){
 
             while(1){
                 getline(&line, &buffer, f);
-                if( feof(f) ){
+                if(feof(f)){
                     break;
                 }
                 if(strstr(line, search) != NULL){
