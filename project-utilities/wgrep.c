@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
     char *search = argv[1];
 
     //size of the buffer for the input line
-    size_t buffer = 120;
+    size_t buffer = 500;
     //location the string will be stored in 
     char * line = (char *) malloc(buffer);
 
@@ -29,6 +29,7 @@ int main(int argc, char *argv[]){
             if(strstr(line, search) != NULL){
                 printf("%s", line);
             }
+            //free(line);
         }
         return 0;
     }
@@ -49,7 +50,7 @@ int main(int argc, char *argv[]){
                 if(strstr(line, search) != NULL){
                     printf("%s", line);
                 }
-                free(line);
+                //free(line);
             }
 
         }
